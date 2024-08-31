@@ -1,0 +1,5 @@
+<div id="leaflet-map" style="height: 800px; width: 100%;"></div>
+
+<p *ngIf="distance">Distance: {{ distance.toFixed(2) }} km</p>
+
+<button mat-button (click)="openRouteDetailsModal()">Create Route</button>

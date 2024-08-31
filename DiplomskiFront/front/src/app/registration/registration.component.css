@@ -1,0 +1,152 @@
+/* Container styling */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Video background styling */
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+/* Text overlay on video */
+.text-over-video {
+  position: absolute;
+  z-index: 2;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px #0a4838;
+}
+
+.text-over-video h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.text-over-video p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Registration container styling */
+.registration-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 400px;
+  background-color:rgba(194, 194, 194, 0.8);/* Slightly transparent white background */
+  border-radius: 10px;
+  box-shadow: 0 10px 20px #0a4838;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Form container */
+.form-container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Form header */
+h1.opacity {
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+/* Form inputs */
+input[type="email"], 
+input[type="password"], 
+input[type="text"] {
+  width: 65%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+input[type="email"]:hover, 
+input[type="password"]:hover, 
+input[type="text"]:hover {
+  background-color: #e0e0e0;
+}
+
+/* Register button styling */
+.btn-primary {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0a4838; /* Button background color */
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  width: 65%; /* Ensure the button matches the width of the input fields */
+  display: block; /* Ensures the button takes up the full width of its container */
+  margin: 10px auto; /* Center the button and add spacing around it */
+}
+
+.btn-primary:hover {
+  background-color: #277d63; /* Darker shade on hover effect */
+}
+
+.btn-primary:active {
+  animation: bounce 0.3s ease forwards;
+}
+
+/* Bounce animation for button */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Alert styling */
+.alert.alert-danger {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Links below the form */
+.register-forget {
+  margin-top: 15px;
+}
+
+.register-forget a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #0a4838; /* Link color */
+  transition: color 0.3s ease;
+}
+
+.register-forget a:hover {
+  color: #073d2d; /* Darker shade on hover */
+}
+
+/* Theme button container */
+.theme-btn-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+}
+/* styles.css or registration.component.css */

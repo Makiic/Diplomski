@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Add Route Details</h1>
+<div mat-dialog-content>
+  <form (ngSubmit)="save()">
+    <mat-form-field appearance="fill">
+      <mat-label>Route Name</mat-label>
+      <input matInput [(ngModel)]="data.name" name="name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Distance (km)</mat-label>
+      <input matInput [value]="data.distance.toFixed(2)" readonly>
+    </mat-form-field>
+
+   
+    
+    <div mat-dialog-actions>
+      <button mat-button (click)="onCancel()">Cancel</button>
+      <button mat-button type="submit">Save</button>
+    </div>
+  </form>
+</div>

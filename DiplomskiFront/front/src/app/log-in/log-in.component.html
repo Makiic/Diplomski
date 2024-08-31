@@ -1,0 +1,27 @@
+<section class="container">
+  <video autoplay muted loop id="background-video">
+    <source src="https://videos.pexels.com/video-files/3028396/3028396-uhd_2560_1440_24fps.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <!-- Text directly over the video -->
+  <div class="text-over-video">
+    <h2>Welcome to Our Platform</h2>
+    <p>Please log in to continue</p>
+  </div>
+  <div class="login-container">
+  
+    <div class="form-container">
+      <h1 class="opacity">LOGIN</h1>
+      <form [formGroup]="loginForm">
+        <input type="email" formControlName="email" placeholder="USERNAME" />
+        <input type="password" formControlName="password" placeholder="PASSWORD" />
+        <button type="button" (click)="login()" class="btn btn-primary opacity bounce-on-click">Submit</button>
+      </form>
+      <div class="register-forget opacity">
+        <a [routerLink]="['/app-registration']">REGISTER</a>
+        <a href="">FORGOT PASSWORD</a>
+      </div>
+    </div>
+  </div>
+  <div class="theme-btn-container"></div>
+</section>

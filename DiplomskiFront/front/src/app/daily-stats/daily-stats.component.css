@@ -1,0 +1,396 @@
+/* Container should be positioned relatively to keep the video in the background */
+.container {
+  position: relative; /* Positioning context for absolute positioning of the video */
+  overflow: hidden; /* Hide any overflowing content */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #f3e2e2;
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Center content vertically and horizontally */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fullscreen video background */
+.video-background {
+  position: absolute; /* Positioning the video absolutely */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  z-index: -1; /* Place behind other content */
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Cover the area without stretching */
+  transform: translate(-50%, -50%); /* Center the video */
+}
+
+
+
+
+/* Main container for all sections */
+/* Main container for all sections */
+.main-container {
+  display: flex;
+  justify-content: space-between; /* Space out the sections evenly */
+  align-items: center; /* Center items vertically */
+  padding: 20px;
+ height:80%;
+  width: 100%; /* Ensure it takes full width available */
+  margin: 0 auto; /* Center the container horizontally */
+  gap: 20px; /* Add space between the sections */
+  position: relative; /* Relative positioning to keep it above the video */
+  z-index: 1; /* Ensure content appears above the video */
+  width: 100%; /* Full width */
+  padding: 20px; /* Adjust padding as needed */
+}
+
+
+
+/* Routes Map Section */
+.routes-container {
+  height:100%;
+  width: 160%; /* Adjust width to fit within the container */
+  background-color:  rgba(255, 255, 255,  0.61);  /* Slightly transparent white background */
+  padding: 20px;
+  gap:30px;
+  border-radius: 20px; /* Reduced border radius */
+  color: #000000; /* Text color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+  text-align: center; /* Center text inside the container */
+  margin: auto; /* Center horizontally */
+  overflow: auto; /* Allow scrolling */
+}
+
+/* Webkit Browsers (Chrome, Safari) */
+.routes-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+/* Firefox */
+.routes-container {
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+.routes-container h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Stats Section */
+.dashboard-container {
+  height:70%;
+  width: 100%; /* Adjust width to fit within the container */
+  background-color: rgba(255, 255, 255,  0.61); /* Slightly transparent white background */
+  padding: 20px;
+  gap:30px;
+  border-radius: 20px; /* Reduced border radius for a sharper look */
+  color: rgba(0, 0, 0, 0.901); /* Text color */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add shadow */
+  text-align: center; /* Center text inside the container */
+}
+
+/* Stats info container */
+.stats-info {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of stat cards */
+  gap: 20px; /* Space between each stat card */
+  justify-content: center; /* Center stat cards inside the container */
+  width: 100%; /* Full width of the container */
+}
+
+/* Individual stats card styles */
+.stats-card {
+  background-color: #195d4d55; /* Slightly more transparent white background */
+  border-radius: 8px; /* Reduced border radius */
+  padding: 15px;
+  text-align: center;
+  flex: 0 1 calc(25% - 20px); /* Adjust to fit four cards per row, accounting for the gap */
+  min-width: 120px; /* Minimum width for stat cards */
+  aspect-ratio: 1 / 1; /* Makes each card a square by setting the aspect ratio */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* User info styles */
+.user-info p {
+  margin-bottom: 10px; /* Space between user info lines */
+}
+
+/* Edit Profile and Help links */
+.register-forget {
+  display: flex;
+  justify-content: center; /* Center the links */
+  margin-top: 20px; /* Space above the links */
+  gap: 10px; /* Space between the links */
+}
+
+.register-forget a {
+  color: #000000; /* Link color */
+  text-decoration: none; /* Remove underline */
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.register-forget a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Hover effect background */
+}
+
+/* Button styles in form container */
+.form-container button {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white background */
+  color: #f3e2e2; /* Text color */
+  border: none;
+  border-radius: 8px; /* Matching border radius with stats cards */
+  padding: 12px 20px; /* Padding to match card size */
+  margin-top: 10px; /* Space above the button */
+  font-size: 14px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+.form-container button:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Hover effect */
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+.leaflet-routing-container {
+  display: none; /* Hide the container */
+}
+
+/* Hide the error container if present */
+.leaflet-routing-error {
+  display: none;
+}
+
+/* Hide the collapse button */
+.leaflet-routing-collapse-btn {
+  display: none;
+}
+.profile-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.profile-image {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.no-image-placeholder {
+  color: #888;
+  font-style: italic;
+}
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-image {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  border-radius: 50%; /* Makes the image round */
+  cursor: pointer; /* Indicates that the image is clickable */
+}
+
+.hidden-file-input {
+  display: none; /* Hides the file input */
+}
+
+/* Optional: Hover effect for the profile image */
+.profile-container:hover .profile-image::after {
+  content: 'Click to change';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.view-toggle button {
+  background-color: transparent; /* Transparent background */
+    color: white;
+    border: 2px solid white; /* White border for visibility */
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.view-toggle button.active {
+  /* Links in the navbar */
+  
+  background-color: transparent; /* Transparent background */
+  color: white;
+  border: 2px solid white; /* White border for visibility */
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+ 
+}
+.new-routes-container {
+  text-align: center;
+  margin-top: 60px; /* Adjust spacing as needed */
+}
+/* Proveri stilove za dugme */
+button {
+  display: block; /* Uveri se da je dugme vidljivo */
+  /* Dodaj druge stilove ako je potrebno */
+}
+
+.new-routes-container button {
+  background-color: transparent; /* Transparent background */
+  color: white;
+  border: 2px solid white; /* White border for visibility */
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.map {
+  height: 700px;
+  width: 100%;
+  border: 1px solid #ddd; /* Optional: add a border around the map */
+}
+
+.route-info {
+  margin: 20px 0;
+}
+
+.actions {
+  margin-top: 10px;
+}
+.delete-icon {
+  cursor: pointer;
+  color: rgb(0, 0, 0); /* Red color for the icon */
+  font-size: 24px; /* Adjust size as needed */
+  margin-top: 10px; /* Add some space from the content above */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.delete-icon:hover {
+  color: rgb(136, 113, 113); /* Darker red on hover */
+}
+/* User Profile Section */
+/* Container for all sections */
+.container2 {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  padding: 20px; /* Optional padding */
+  width: 100%; /* Full width */
+  height: auto; /* Allow height to adjust based on content */
+}
+
+/* User Profile Section */
+.form-container {
+  width: 100%; /* Adjust width to fit within the container */
+  background-color: rgba(255, 255, 255, 0.61); /* Slightly transparent white background */
+  padding: 20px;
+  border-radius: 20px; /* Reduced border radius */
+  color: #000000; /* Text color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+  text-align: center; /* Center text inside the container */
+  margin-bottom: 20px; /* Space below the user profile section */
+}
+
+/* Clubs Section */
+.clubs-container {
+  width: 100%; /* Full width */
+  background-color: rgba(255, 255, 255, 0.61); /* Slightly transparent white background */
+  padding: 20px;
+  border-radius: 20px; /* Reduced border radius */
+  color: #000000; /* Text color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+  text-align: center; /* Center text inside the container */
+  margin-bottom: 20px; /* Space below the clubs section */
+}
+
+/* Clubs List */
+.clubs-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.club-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.club-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.club-circle p {
+  position: absolute;
+  bottom: 10px; /* Adjust this value to move text lower or higher */
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.club-image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.checkmark-icon {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  color: green; /* Color for the checkmark */
+  font-size: 24px; /* Adjust size as needed */
+  background: white; /* Optional: background for better visibility */
+  border-radius: 50%; /* Optional: rounded background */
+  padding: 2px; /* Adjust padding as needed */
+}

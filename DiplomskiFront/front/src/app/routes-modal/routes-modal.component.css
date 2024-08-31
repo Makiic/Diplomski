@@ -1,0 +1,66 @@
+/* Ovi stilovi će biti primenjeni na modal */
+.custom-dialog-container .mat-dialog-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Providna bela pozadina */
+    border-radius: 8px; /* Zaobljeni uglovi */
+    padding: 16px; /* Unutrašnje margine */
+    width: 80vw; /* Širina modala */
+    height: 80vh; /* Visina modala */
+  }
+  
+  /* Ako imate specifične delove modala kao što su zaglavlje i noga, možete stilizovati ovako */
+  .custom-dialog-container .modal-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+  }
+  
+  .custom-dialog-container .modal-footer {
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+    text-align: right;
+  }
+  
+
+
+.routes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Razmak između kartica */
+    padding: 16px;
+    justify-content: center; /* Centriranje kartica */
+  }
+  
+  .route-card {
+    border: 1px solid #ddd; /* Oko kartice */
+    border-radius: 8px; /* Zaobljeni uglovi */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Senka kartice */
+    overflow: hidden;
+    width: 200px; /* Širina kartice */
+    text-align: center; /* Tekst u centru kartice */
+    background-color: #fff; /* Pozadina kartice */
+    padding: 16px;
+  }
+  
+  .route-info {
+    margin-top: 8px; /* Razmak između mape i informacija */
+  }
+  
+  .route-distance {
+    font-size: 1em; /* Velicina fonta za udaljenost */
+    color: #333; /* Boja teksta */
+  }
+  button.liked {
+    color: #e74c3c; /* Crvena boja kada je lajkovano */
+  }
+  
+  button.not-liked {
+    color: #ccc; /* Siva boja kada nije lajkovano */
+  }.rating-section span {
+    cursor: pointer;
+    font-size: 24px;
+    color: gray;
+  }
+  
+  .rating-section span.selected {
+    color: gold;
+  }
+  
