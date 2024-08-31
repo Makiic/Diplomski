@@ -1,0 +1,90 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay with higher opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fbfcfc4d; /* Dark green background */
+    color: #f0f0f0; /* Light text color for contrast */
+    padding: 15px;
+    border-radius: 12px; /* Slightly rounded corners */
+    width: 350px; /* Smaller width for modal */
+    max-height: 80vh; /* Adjust height to be responsive */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow effect */
+    overflow-y: auto; /* Allow vertical scroll if needed */
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+    color: #f0f0f0; /* Light color for the header */
+    text-align: center; /* Center align the header text */
+  }
+  
+  .modal-content form {
+    display: flex;
+    flex-wrap: wrap; /* Allow fields to wrap into multiple rows */
+    gap: 10px; /* Space between fields */
+  }
+  
+  .form-row {
+    flex: 1 1 100%; /* Each row takes full width */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content label {
+    font-weight: bold;
+    color: #ffffff; /* Light color for labels */
+  }
+  
+  .modal-content input {
+    padding: 8px;
+    border: 1px solid #103425; /* Slightly lighter green border */
+    border-radius: 6px; /* Rounded corners for inputs */
+    background: #ffffff; /* Darker green input background */
+    color: #000000; /* Light text color */
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between; /* Space buttons evenly */
+    margin-top: 15px;
+  }
+  
+  .modal-content button {
+    flex: 1; /* Buttons take equal width */
+    padding: 10px;
+    border: none;
+    border-radius: 6px; /* Rounded corners for buttons */
+    cursor: pointer;
+    font-size: 14px; /* Slightly smaller font size */
+    color: #fff; /* White text color */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 5px; /* Space between buttons */
+  }
+  
+  .modal-content button:first-of-type {
+    background-color: #1b3d3b; /* Slightly lighter dark green for Save button */
+  }
+  
+  .modal-content button:first-of-type:hover {
+    background-color: #1a2b2a; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scaling on hover */
+  }
+  
+  .modal-content button:last-of-type {
+    background-color: #4a6a5d; /* Greyish green for Cancel button */
+  }
+  
+  .modal-content button:last-of-type:hover {
+    background-color: #2e4d4b; /* Dark green on hover */
+    transform: scale(1.05); /* Slight scaling on hover */
+  }
+  

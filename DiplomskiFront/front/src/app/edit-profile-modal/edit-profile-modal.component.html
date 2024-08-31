@@ -1,0 +1,38 @@
+<div class="modal-overlay" (click)="onNoClick()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h2>Edit Profile</h2>
+      <!-- Add your form fields here -->
+      <form>
+        <div class="form-row">
+            <label for="name">Name:</label>
+            <input id="name" [(ngModel)]="data.name" name="name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email:</label>
+            <input id="email" [(ngModel)]="data.email" name="email" />
+          </div>
+          <div class="form-row">
+            <label for="Surname">Surname:</label>
+            <input id="surname" [(ngModel)]="data.surname" name="surname" />
+          </div>
+          <div class="form-row">
+            <label for="Phone">Phone:</label>
+            <input id="phone" [(ngModel)]="data.phone" name="phone" />
+          </div>
+          <div class="form-row">    
+            <label for="City">City:</label>
+            <input id="city" [(ngModel)]="data.city" name="city" />
+          </div>
+          <div class="form-row">
+            <label for="Country">Country:</label>
+            <input id="country" [(ngModel)]="data.country" name="country" />    
+          </div>
+
+        <!-- Add other fields as needed -->
+  
+        <button (click)="save()">Save</button>
+        <button (click)="onNoClick()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  

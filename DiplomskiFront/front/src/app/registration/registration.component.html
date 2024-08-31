@@ -1,0 +1,42 @@
+<body>
+  <section class="container">
+    <video autoplay muted loop id="background-video">
+      <source src="https://videos.pexels.com/video-files/3028396/3028396-uhd_2560_1440_24fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="text-over-video">
+      <h2>REGISTER</h2>
+    
+    </div>
+    <div class="registration-container">
+      <div class="form-container">
+        <form [formGroup]="registrationForm">
+          <input type="email" formControlName="email" placeholder="Email" />
+          <input type="password" formControlName="password" placeholder="Password" />
+          <input type="password" formControlName="rpassword" placeholder="Repeat Password" />
+          <input type="text" formControlName="name" placeholder="Name" />
+          <input type="text" formControlName="surname" placeholder="Surname" />
+          <input type="text" formControlName="city" placeholder="City" />
+          <input type="text" formControlName="country" placeholder="Country" />
+          <input type="text" formControlName="number" placeholder="Phone Number" />
+    
+         
+            <input #fileInput class="fixed-width-input" type="file" (change)="onFileSelected($event)">
+         
+            <!-- Existing HTML -->
+
+       
+          <button type="button" (click)="registerSubmited()" class="btn btn-primary bounce-on-click">Register</button>
+        </form>
+        <div *ngIf="repeatedPassword === 'inline'" class="alert alert-danger">
+          Passwords do not match.
+        </div>
+        <div *ngIf="successMessage">{{ successMessage }}</div>
+        <div *ngIf="errorMessage">{{ errorMessage }}</div>
+        <div  [routerLink]="['']" class="register-forget">
+          <a href="">LOGIN</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

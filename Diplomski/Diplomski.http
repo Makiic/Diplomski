@@ -1,0 +1,6 @@
+@Diplomski_HostAddress = http://localhost:5118
+
+GET {{Diplomski_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,111 @@
+<section class="container">
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="https://videos.pexels.com/video-files/3028396/3028396-uhd_2560_1440_24fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+ 
+  <div class="main-container">
+    <div class ="container2">
+    <!-- User Profile Section -->
+    <div class="form-container">
+      <h1 class="opacity">USER PROFILE</h1>
+      <div>
+        <div class="profile-container" *ngIf="Person">
+          <img *ngIf="Person.profileImageUrl" [src]="getFullImageUrl(Person.profileImageUrl)" alt="Profile Picture" class="profile-image" (click)="fileInput.click()">
+          <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" class="hidden-file-input">
+        </div>
+        <p><strong>Surname:</strong> {{ Person.surname }}</p>
+        <p><strong>Name:</strong> {{ Person.name }}</p>
+        <p><strong>Country:</strong> {{ Person.country }}</p>
+        <p><strong>City:</strong> {{ Person.city }}</p>
+        <p><strong>Email:</strong> {{ Person.email }}</p>
+        <p><strong>Phone:</strong> {{ Person.phone }}</p>
+        <p *ngIf="currentUser"><strong>Role:</strong> {{ getUserRole(currentUser.role) }}</p>
+      </div>
+      <div *ngIf="!Person" class="alert alert-info">
+        Loading user profile...
+      </div>
+      <div class="register-forget opacity">
+        <a (click)="openEditProfileDialog(Person)">EDIT</a>
+        <a (click)="openChangePassword(Person)">CHANGE PASSWORD</a>
+        <a href="#">HELP</a>
+      </div>
+      
+    </div>
+    <div class="clubs-container" *ngIf="currentUser?.role == UserRole.SUBSCRIBED_USER">
+      <div class="clubs-list">
+        <div *ngFor="let club of clubs" class="club-circle" (click)="onClubClick(club.id)">
+          <img [src]="getFullImageUrl(club.picture)" alt="{{ club.name }}">
+          <p>{{ club.name }}</p>
+          <span *ngIf="club.isJoined" class="checked-icon">✔️</span> <!-- Checked icon -->
+        </div>
+      </div>
+    </div>
+   
+
+    </div>
+    <!-- Routes Map Section -->
+    <div class="routes-container" *ngIf="currentUser?.role !== UserRole.ADMINISTRATOR">
+      <h1>My activities</h1>
+      <div *ngFor="let item of activities">
+        <div class="stats-card1">
+          <h3>{{ item.activity.name }}</h3>
+          <p>{{ getTypeName(item.activity.type) }}</p>
+          <p>Pace: {{ item.activity.pace }}</p>
+          <p>Distance: {{ item.route.distance.toFixed(2) }} km</p>
+          <app-route-map [route]="item.route" [id]="'map-container-' + item.activity.id"></app-route-map>
+        </div>
+      </div>
+    </div>
+
+ 
+    
+    <!-- Stats Section -->
+    <div class="dashboard-container" *ngIf="currentUser?.role !== UserRole.ADMINISTRATOR">
+      
+      <div class="view-toggle">
+        <button (click)="toggleView('monthly')" [class.active]="currentView === 'monthly'">Monthly View</button>
+        <button (click)="toggleView('yearly')" [class.active]="currentView === 'yearly'">Yearly View</button>
+      </div>
+      <div class="stats-info">
+        <div class="stats-card">
+          <p>Total Activities</p>
+          <h2>{{ currentView === 'monthly' ? totalActivitiesPerMonth : totalActivitiesPerYear }}</h2>
+          <p>Activities per {{ currentView }}</p>
+        </div>
+        <div class="stats-card">
+          <p>Total Steps</p>
+          <h2>{{ (currentView === 'monthly' ? totalStepsMonth : totalStepsYear) | number: '1.0-0' }} steps</h2>
+          <p>Total per {{ currentView }}</p>
+        </div>
+        <div class="stats-card">
+          <p>Total Calories Burned</p>
+          <h2>{{ (currentView === 'monthly' ? totalCaloriesMonth : totalCaloriesYear) | number: '1.0-0' }} kcal</h2>
+          <p>Total per {{ currentView }}</p>
+        </div>
+        <div class="stats-card">
+          <p>Total Distance</p>
+          <h2>{{ (currentView === 'monthly' ? totalDistanceMonth : totalDistanceYear) | number: '1.2-2' }} km</h2>
+          <p>Total per {{ currentView }}</p>
+        </div>
+      </div>
+    
+     
+
+   
+    
+   
+  </div>
+  <div class="dashboard-container" *ngIf="currentUser?.role == UserRole.ADMINISTRATOR">
+    <div class="stats-info">
+      <div id="leaflet-map" style="height: 400px; width: 100%;"></div>
+      <p *ngIf="distance">Distance: {{ distance.toFixed(2) }} km</p>
+      <button mat-button (click)="openRouteDetailsModal()">Create Route</button>
+    </div>
+  </div>
+</div>
+ 
+</section>

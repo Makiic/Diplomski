@@ -1,0 +1,27 @@
+<div class="navbar">
+    <div class="navbar-logo">
+      
+    </div>
+
+    <div class="navbar-links">
+        <a [routerLink]="['app-homepage']">Home</a>
+       
+    </div>
+    
+    <div class="navbar-button">
+        <div class="navbar-dropdown">
+            <button class="profile-button" (mouseenter)="showOptions = true" (mouseleave)="showOptions = false">
+                Options
+                <div class="dropdown-options" *ngIf="showOptions">
+                    <a [routerLink]="['']" >Logout</a>
+                    <a (click)="openRoutesModal()"*ngIf="currentUser?.role !== UserRole.ADMINISTRATOR">View Route</a>
+                    
+                     
+                </div>
+            </button>
+        </div>
+       
+        
+    </div>
+    
+</div>

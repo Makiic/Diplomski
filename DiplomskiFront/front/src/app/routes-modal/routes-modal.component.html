@@ -1,0 +1,19 @@
+<div class="routes-container">
+  <div class="route-card" *ngFor="let route of routes; let i = index">
+    <app-route-map [route]="route" [id]="'map-container-' + i"></app-route-map>
+    <div class="route-info">
+      <p class="route-distance">Distance: {{ route.distance.toFixed(2) }} km</p>
+      <h3>{{ route.name }}</h3>
+      <div class="rating-section"*ngIf="currentUser?.role == UserRole.SUBSCRIBED_USER" >
+        <span *ngFor="let star of [1, 2, 3, 4, 5]" 
+              (click)="rateRoute(route, star)"
+              [class.selected]="selectedRating[route.id] >= star">
+          &#9733; <!-- This represents a star symbol -->
+        </span>
+      </div>
+      <button (click)="toggleLike(route)" [ngClass]="{'liked': route.liked, 'not-liked': !route.liked}">
+        <i class="fas fa-heart"></i>
+      </button>
+    </div>
+  </div>
+</div>

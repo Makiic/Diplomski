@@ -1,0 +1,34 @@
+<!-- user-profile.component.html -->
+<body>
+    <section class="container">
+      <div class="profile-container">
+        <div class="circle circle-one"></div>
+        <div class="form-container">
+         
+          <h1 class="opacity">USER PROFILE</h1>
+          <div>
+            <div class="user-info">
+              <p><strong>Surname:</strong> {{ currentUser?.surname }}</p>
+              <p><strong>Name:</strong> {{ currentUser?.name }}</p>
+              <p><strong>Email:</strong> {{ currentUser?.email }}</p>
+              <p><strong>Role:</strong> {{ currentUser?.role}}</p>
+         
+            
+            </div>
+           
+          </div>
+  
+          <div *ngIf="!currentUser" class="alert alert-info">
+            Loading user profile...
+          </div>
+          <div class="register-forget opacity">
+            <a href="#">EDIT PROFILE</a>
+            <a href="#">HELP</a>
+          </div>
+        </div>
+        <div class="circle circle-two"></div>
+      </div>
+      <div class="theme-btn-container"></div>
+    </section>
+  </body>
+  
